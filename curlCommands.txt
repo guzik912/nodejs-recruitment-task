@@ -1,0 +1,50 @@
+If work on docker, example IP - '0.0.0.0:PORT/<endpoint>' 
+If work locally, example IP - '127.0.0.1:PORT/<endpoint>'
+
+Handle token - basic user
+curl --location --request POST '127.0.0.1:3000/auth' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "basic-thomas",
+    "password": "sR-_pcoow-27-6PAwCD8"
+}'
+
+Get movies - basic user
+curl --location --request GET '127.0.0.1:3000/movies' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywibmFtZSI6IkJhc2ljIFRob21hcyIsInJvbGUiOiJiYXNpYyIsImlhdCI6MTYyMTI0OTMwOCwiZXhwIjoxNjIxMjUxMTA4LCJpc3MiOiJodHRwczovL3d3dy5uZXRndXJ1LmNvbS8iLCJzdWIiOiIxMjMifQ.0wSPtV7ORrK7Z5AaCovfEa9NduBOLj_hu4osPO5noz4'
+
+
+Create movie - basic user
+curl --location --request POST '127.0.0.1:3000/movies' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywibmFtZSI6IkJhc2ljIFRob21hcyIsInJvbGUiOiJiYXNpYyIsImlhdCI6MTYyMTI0OTMwOCwiZXhwIjoxNjIxMjUxMTA4LCJpc3MiOiJodHRwczovL3d3dy5uZXRndXJ1LmNvbS8iLCJzdWIiOiIxMjMifQ.0wSPtV7ORrK7Z5AaCovfEa9NduBOLj_hu4osPO5noz4' \
+--data-raw '{
+    "title": "God of war"
+}'
+
+
+
+
+
+
+Handle token - premium user
+curl --location --request POST '127.0.0.1:3000/auth' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "premium-jim",
+    "password": "GBLtTyq3E_UNjFnpo9m6"
+}'
+
+
+Get movies - premium user
+curl --location --request GET '127.0.0.1:3000/movies' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQzNCwibmFtZSI6IlByZW1pdW0gSmltIiwicm9sZSI6InByZW1pdW0iLCJpYXQiOjE2MjEyNDQzMTksImV4cCI6MTYyMTI0NjExOSwiaXNzIjoiaHR0cHM6Ly93d3cubmV0Z3VydS5jb20vIiwic3ViIjoiNDM0In0.LqM0D2BUDERu23xjqfrsyMALc4UPY8SRUb0IiCKWyqg'
+
+
+Create movie - premium user
+curl --location --request POST '127.0.0.1:3000/movies' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQzNCwibmFtZSI6IlByZW1pdW0gSmltIiwicm9sZSI6InByZW1pdW0iLCJpYXQiOjE2MjEyNDQzMTksImV4cCI6MTYyMTI0NjExOSwiaXNzIjoiaHR0cHM6Ly93d3cubmV0Z3VydS5jb20vIiwic3ViIjoiNDM0In0.LqM0D2BUDERu23xjqfrsyMALc4UPY8SRUb0IiCKWyqg' \
+--data-raw '{
+    "title": "other"
+}'
